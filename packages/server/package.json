@@ -1,0 +1,33 @@
+{
+  "name": "@rush-pos/server",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun",
+    "start": "bun run dist/index.js",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo lint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "clean": "rm -rf dist coverage"
+  },
+  "dependencies": {
+    "@rush-pos/shared": "workspace:*",
+    "express": "^4.21.0",
+    "drizzle-orm": "^0.33.0",
+    "postgres": "^3.4.0",
+    "zod": "^3.23.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/bun": "^1.1.0",
+    "drizzle-kit": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}
