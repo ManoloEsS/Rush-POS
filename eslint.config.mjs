@@ -11,7 +11,43 @@ export default [
   },
   js.configs.recommended,
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ['packages/server/**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tsparser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+      globals: {
+        ...globals.node,
+        ...globals.bun,
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tseslint,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
+      ],
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@rush-pos/web'],
+              message:
+                'Do not import from @rush-pos/web in the server package.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['packages/web/**/*.{ts,tsx}'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
@@ -22,9 +58,8 @@ export default [
         },
       },
       globals: {
-        ...globals.node,
         ...globals.browser,
-        ...globals.bun,
+        ...globals.node,
       },
     },
     plugins: {
@@ -48,12 +83,7 @@ export default [
             {
               group: ['@rush-pos/server'],
               message:
-                'Do not import from @rush-pos/server outside of the server package.',
-            },
-            {
-              group: ['@rush-pos/web'],
-              message:
-                'Do not import from @rush-pos/web outside of the web package.',
+                'Do not import from @rush-pos/server in the web package.',
             },
           ],
         },
@@ -63,6 +93,43 @@ export default [
       react: {
         version: 'detect',
       },
+    },
+  },
+  {
+    files: ['packages/shared/**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tsparser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tseslint,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
+      ],
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@rush-pos/server'],
+              message:
+                'Do not import from @rush-pos/server in the shared package.',
+            },
+            {
+              group: ['@rush-pos/web'],
+              message:
+                'Do not import from @rush-pos/web in the shared package.',
+            },
+          ],
+        },
+      ],
     },
   },
 ];
