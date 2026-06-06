@@ -6,37 +6,37 @@ Architecture Decision Records (ADRs) for the full-stack application.
 
 ### Tech Stack
 
-| ADR                                                                     | Title                                           | Status   |
-| ----------------------------------------------------------------------- | ----------------------------------------------- | -------- |
-| [ADR-001](#adr-001-use-typescript-as-the-primary-language)              | Use TypeScript as the primary language          | Accepted |
-| [ADR-002](#adr-002-use-bun-as-the-all-in-one-toolchain)                 | Use Bun as the all-in-one toolchain             | Accepted |
-| [ADR-004](#adr-004-use-postgresql-via-docker-for-local-development)     | Use PostgreSQL via Docker for local development | Accepted |
-| [ADR-005](#adr-005-use-react-spa-for-the-frontend)                      | Use React SPA for the frontend                  | Accepted |
-| [ADR-006](#adr-006-use-zod-for-validation-and-type-inference)           | Use Zod for validation and type inference       | Accepted |
-| [ADR-007](#adr-007-use-drizzle-orm-for-database-access)                 | Use Drizzle ORM for database access             | Accepted |
-| [ADR-010](#adr-010-use-express-as-the-backend-framework)                | Use Express as the backend framework            | Accepted |
-| [ADR-013](#adr-013-use-basic-react-state-management-usestateusecontext) | Use basic React state management                | Accepted |
-| [ADR-017](#adr-017-use-dotenv-for-environment-configuration)            | Use dotenv for environment configuration        | Accepted |
-| [ADR-024](#adr-024-strict-typescript-configuration)                     | Strict TypeScript configuration                 | Accepted |
+| ADR                                                                       | Title                                               | Status   |
+| ------------------------------------------------------------------------- | --------------------------------------------------- | -------- |
+| [ADR-001](#adr-001-use-typescript-as-the-primary-language)                | Use TypeScript as the primary language              | Accepted |
+| [ADR-002](#adr-002-use-bun-as-the-all-in-one-toolchain)                   | Use Bun as the all-in-one toolchain                 | Accepted |
+| [ADR-004](#adr-004-use-postgresql-via-docker-for-local-development)       | Use PostgreSQL via Docker for local development     | Accepted |
+| [ADR-005](#adr-005-use-react-spa-for-the-frontend)                        | Use React SPA for the frontend                      | Accepted |
+| [ADR-006](#adr-006-use-zod-for-validation-and-type-inference)             | Use Zod for validation and type inference           | Accepted |
+| [ADR-007](#adr-007-use-drizzle-orm-for-database-access)                   | Use Drizzle ORM for database access                 | Accepted |
+| [ADR-010](#adr-010-use-express-as-the-backend-framework)                  | Use Express as the backend framework                | Accepted |
+| [ADR-013](#adr-013-use-basic-react-state-management-usestateusecontext)   | Use basic React state management                    | Accepted |
+| [ADR-017](#adr-017-use-dotenv-for-environment-configuration)              | Use dotenv for environment configuration            | Accepted |
+| [ADR-024](#adr-024-strict-typescript-configuration)                       | Strict TypeScript configuration                     | Accepted |
 | [ADR-027](#adr-027-add-typesnode-and-configure-typesnode-bun-in-tsconfig) | Add @types/node and configure types ["node", "bun"] | Accepted |
-| [ADR-028](#adr-028-use-postgresjs-as-the-drizzle-postgresql-driver)    | Use postgres.js as the Drizzle PostgreSQL driver | Accepted |
+| [ADR-028](#adr-028-use-postgresjs-as-the-drizzle-postgresql-driver)       | Use postgres.js as the Drizzle PostgreSQL driver    | Accepted |
 
 ### Architecture
 
-| ADR                                                                                         | Title                                        | Status   |
-| ------------------------------------------------------------------------------------------- | -------------------------------------------- | -------- |
-| [ADR-008](#adr-008-adopt-strict-tdd-as-the-development-approach)                            | Adopt strict TDD as the development approach | Accepted |
-| [ADR-009](#adr-009-organize-code-in-vertical-slices-feature-folders--shared-infrastructure) | Organize code in vertical slices             | Accepted |
-| [ADR-011](#adr-011-use-rest-api-style)                                                      | Use REST API style                           | Accepted |
-| [ADR-014](#adr-014-monorepo-with-bun-workspaces)                                            | Monorepo with Bun workspaces                 | Accepted |
-| [ADR-015](#adr-015-use-jwt-for-authentication)                                              | Use JWT for authentication                   | Accepted |
-| [ADR-018](#adr-018-react-native-as-a-future-nice-to-have)                                   | React Native as a future nice-to-have        | Accepted |
-| [ADR-019](#adr-019-project-scaffolding-with-bun-workspaces)                                 | Project scaffolding with Bun workspaces      | Accepted |
-| [ADR-029](#adr-029-centralized-config-object-with-runtime-validation)                     | Centralized config object with runtime validation | Accepted |
-| [ADR-030](#adr-030-apptsindexts-separation-pattern)                                        | app.ts / index.ts separation pattern        | Accepted |
-| [ADR-031](#adr-031-api-route-prefix-and-health-check-endpoint)                             | API route prefix and health check endpoint   | Accepted |
-| [ADR-032](#adr-032-graceful-shutdown-with-sigintsigterm-handling)                          | Graceful shutdown with SIGINT/SIGTERM handling | Accepted |
-| [ADR-033](#adr-033-uuid-primary-keys-with-gen_random_uuid)                                 | UUID primary keys with gen_random_uuid()     | Accepted |
+| ADR                                                                                         | Title                                             | Status   |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------- | -------- |
+| [ADR-008](#adr-008-adopt-strict-tdd-as-the-development-approach)                            | Adopt strict TDD as the development approach      | Accepted |
+| [ADR-009](#adr-009-organize-code-in-vertical-slices-feature-folders--shared-infrastructure) | Organize code in vertical slices                  | Accepted |
+| [ADR-011](#adr-011-use-rest-api-style)                                                      | Use REST API style                                | Accepted |
+| [ADR-014](#adr-014-monorepo-with-bun-workspaces)                                            | Monorepo with Bun workspaces                      | Accepted |
+| [ADR-015](#adr-015-use-jwt-for-authentication)                                              | Use JWT for authentication                        | Accepted |
+| [ADR-018](#adr-018-react-native-as-a-future-nice-to-have)                                   | React Native as a future nice-to-have             | Accepted |
+| [ADR-019](#adr-019-project-scaffolding-with-bun-workspaces)                                 | Project scaffolding with Bun workspaces           | Accepted |
+| [ADR-029](#adr-029-centralized-config-object-with-runtime-validation)                       | Centralized config object with runtime validation | Accepted |
+| [ADR-030](#adr-030-apptsindexts-separation-pattern)                                         | app.ts / index.ts separation pattern              | Accepted |
+| [ADR-031](#adr-031-api-route-prefix-and-health-check-endpoint)                              | API route prefix and health check endpoint        | Accepted |
+| [ADR-032](#adr-032-graceful-shutdown-with-sigintsigterm-handling)                           | Graceful shutdown with SIGINT/SIGTERM handling    | Accepted |
+| [ADR-033](#adr-033-uuid-primary-keys-with-gen_random_uuid)                                  | UUID primary keys with gen_random_uuid()          | Accepted |
 
 ### DevOps & Infra
 
@@ -45,7 +45,7 @@ Architecture Decision Records (ADRs) for the full-stack application.
 | [ADR-003](#adr-003-set-up-ci-pipeline-early-with-github-actions) | Set up CI pipeline early with GitHub Actions | Accepted |
 | [ADR-016](#adr-016-use-neon-postgres-on-render-for-production)   | Use Neon Postgres on Render for production   | Accepted |
 | [ADR-020](#adr-020-docker-based-local-database-management)       | Docker-based local database management       | Accepted |
-| [ADR-035](#adr-035-bun---hot-for-development-server-reload)     | Bun --hot for development server reload      | Accepted |
+| [ADR-035](#adr-035-bun---hot-for-development-server-reload)      | Bun --hot for development server reload      | Accepted |
 
 ### UX/UI
 
@@ -58,13 +58,13 @@ Architecture Decision Records (ADRs) for the full-stack application.
 | ADR                                                                 | Title                                                                  | Status   |
 | ------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------- |
 | [ADR-021](#adr-021-code-style-enforcement-with-prettier-and-eslint) | Code style: single quotes, semicolons, enforced with Prettier + ESLint | Accepted |
-| [ADR-022](#adr-022-environment-variable-management-with-env-files) | Environment variable management with --env-file flags                  | Accepted |
-| [ADR-023](#adr-023-eslint-per-package-rules-and-import-boundaries) | ESLint per-package rules and import boundaries                        | Accepted |
-| [ADR-025](#adr-025-pre-commit-hooks-with-husky-and-lint-staged) | Pre-commit hooks with Husky and lint-staged                           | Accepted |
-| [ADR-026](#adr-026-keep-node_env-in-environment-files) | Keep NODE_ENV in environment files                                     | Accepted |
-| [ADR-034](#adr-034-named-exports-only-no-default-exports) | Named exports only (no default exports)                               | Accepted |
-| [ADR-036](#adr-036-path-aliases--mapping-to-src-in-all-packages) | Path aliases @/* mapping to ./src/* in all packages                    | Accepted |
-| [ADR-037](#adr-037-code-conventions)                               | Code conventions (grouped minor decisions)                            | Accepted |
+| [ADR-022](#adr-022-environment-variable-management-with-env-files)  | Environment variable management with --env-file flags                  | Accepted |
+| [ADR-023](#adr-023-eslint-per-package-rules-and-import-boundaries)  | ESLint per-package rules and import boundaries                         | Accepted |
+| [ADR-025](#adr-025-pre-commit-hooks-with-husky-and-lint-staged)     | Pre-commit hooks with Husky and lint-staged                            | Accepted |
+| [ADR-026](#adr-026-keep-node_env-in-environment-files)              | Keep NODE_ENV in environment files                                     | Accepted |
+| [ADR-034](#adr-034-named-exports-only-no-default-exports)           | Named exports only (no default exports)                                | Accepted |
+| [ADR-036](#adr-036-path-aliases--mapping-to-src-in-all-packages)    | Path aliases @/_ mapping to ./src/_ in all packages                    | Accepted |
+| [ADR-037](#adr-037-code-conventions)                                | Code conventions (grouped minor decisions)                             | Accepted |
 
 ---
 
@@ -504,7 +504,7 @@ Each decision follows this format:
 
 ---
 
-## ADR-036: Path aliases @/* mapping to ./src/* in all packages
+## ADR-036: Path aliases @/_ mapping to ./src/_ in all packages
 
 - **Status**: Accepted
 - **Category**: Code Style
